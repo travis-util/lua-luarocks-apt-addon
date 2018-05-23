@@ -10,6 +10,7 @@ addons:
     - lua5.1
     - lua-sec
     - luarocks
+    - openssl # luasec
 
 
 before_install:
