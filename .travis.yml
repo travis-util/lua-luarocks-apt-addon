@@ -5,20 +5,30 @@ dist: trusty
 addons:
   apt:
     packages:
-    - libfcgi-dev
+    - libfcgi-dev # wsapi-fastcgi
+    - libssl-dev # luasec
     - lua5.1
     - lua-sec
     - luarocks
 
-script:
+
+before_install:
 - command -v lua
-# - lua hello.lua
-- lua -e 'print("Hello World")'
 - command -v luarocks
+
+
+install:
 - sudo -H luarocks install luasocket
 # Error: Your user does not have write permissions in /usr/local/lib/luarocks/rocks 
 # -- you may want to run as a privileged user or use your local tree with --local.
+
+
+before_script:
 - find /usr/local -name socket.lua
+
+
+script:
+- lua -e 'print("Hello World")'
 - lua -e 'require "socket"'
 - sudo -H luarocks install luasec
 - lua -e 'require "luasec"'
