@@ -19,6 +19,11 @@ script:
 # -- you may want to run as a privileged user or use your local tree with --local.
 - find /usr/local -name socket.lua
 - lua -e 'require "socket"'
+- sudo -H luarocks install luasec
+- lua -e 'require "luasec"'
+
+
+after_script:
 - sudo -H luarocks install wsapi
 - lua -e 'require "wsapi"'
 - sudo -H luarocks install wsapi-xavante
