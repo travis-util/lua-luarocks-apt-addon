@@ -31,7 +31,7 @@ before_script:
 script:
 - lua -e 'print("Hello World")'
 - lua -e 'require "socket"'
-- sudo -H luarocks install luasec
+- sudo -H luarocks install luasec OPENSSL_DIR=/usr/lib/i386-linux-gnu
 - lua -e 'require "luasec"'
 
 
