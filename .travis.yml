@@ -7,6 +7,7 @@ addons:
     packages:
     - libfcgi-dev
     - lua5.1
+    - lua-sec
     - luarocks
 
 script:
