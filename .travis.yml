@@ -35,14 +35,14 @@ before_script:
 script:
 - lua -e 'print("Hello World")'
 - lua -e 'require "socket"'
-# - sudo -H luarocks install luasec OPENSSL_DIR=/usr/lib/i386-linux-gnu
-- sudo -H luarocks install luasec OPENSSL_DIR=/usr/lib
-- lua -e 'require "luasec"'
+- lua -e 'require "ssl"'
 
 
 after_script:
+# - sudo -H luarocks install luasec OPENSSL_DIR=/usr/lib/i386-linux-gnu
+- sudo -H luarocks install luasec OPENSSL_DIR=/usr/lib # ssl
 - apt-cache policy libfcgi-dev
 - apt-cache policy libfcgi0ldbl
 # - sudo -H luarocks install wsapi-fastcgi
-- sudo -H luarocks install wsapi.fastcgi
+- sudo -H luarocks install wsapi-fcgi
 - lua -e 'require "wsapi.fastcgi"'
