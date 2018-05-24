@@ -43,6 +43,8 @@ script:
 after_script:
 # - sudo -H luarocks install luasec OPENSSL_DIR=/usr/lib/i386-linux-gnu
 # - sudo -H luarocks install luasec OPENSSL_DIR=/usr/lib # ssl # Needs OpenSSL version 1.1.0 not available on ubuntu trusty
-- sudo -H luarocks install luasec 0.6 OPENSSL_DIR=/usr/lib # ssl
+- sudo -H luarocks install luasec 0.6 OPENSSL_DIR=/usr/lib/i386-linux-gnu # ssl
+- find /usr/lib/i386-linux-gnu -name libssl.so
+- find /usr/lib/i386-linux-gnu -name libssl.\*
 - apt-cache policy libfcgi-dev
 - apt-cache policy libfcgi0ldbl
