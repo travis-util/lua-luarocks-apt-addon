@@ -41,6 +41,7 @@ script:
 
 
 after_script:
+- luarocks list
 # - sudo -H luarocks install luasec OPENSSL_DIR=/usr/lib/i386-linux-gnu
 # - sudo -H luarocks install luasec OPENSSL_DIR=/usr/lib/x86_64-linux-gnu # ssl # Needs OpenSSL version 1.1.0 not available on ubuntu trusty
 - sudo -H luarocks install luasec 0.5-1 OPENSSL_DIR=/usr/lib/ssl # ssl
